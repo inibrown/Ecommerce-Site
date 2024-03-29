@@ -9,58 +9,60 @@ const Menu = [
   {
     id: 1,
     name: "Home",
-    link: "/#",
+    link: "#home",
   },
   {
     id: 2,
-    name: "Top Rated",
-    link: "/#services",
+    name: "Catalog",
+    link: "#top-products",
   },
   {
     id: 3,
-    name: "Kids Wear",
-    link: "/#",
+    name: "About Ini",
+    link: "#about-ini",
   },
   {
-    id: 3,
-    name: "Mens Wear",
-    link: "/#",
-  },
-  {
-    id: 3,
-    name: "Electronics",
-    link: "/#",
+    id: 4,
+    name: "Contact Us",
+    link: "#contact-us",
   },
 ];
 
 const DropdownLinks = [
   {
     id: 1,
-    name: "Trending Products",
-    link: "/#",
+    name: "Catalog",
+    link: "#top-products",
   },
   {
     id: 2,
-    name: "Best Selling",
-    link: "/#",
+    name: "Prints",
+    link: "#prints",
   },
   {
     id: 3,
-    name: "Top Rated",
-    link: "/#",
+    name: "Minis",
+    link: "#minis",
   },
 ];
 
 const Navbar = ({ handleOrderPopup }) => {
+  const smoothScroll = (link) => {
+    const target = document.querySelector(link);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <div className="shadow-md bg-white dark:bg-gray-900 dark:text-white duration-200 relative z-40">
       {/* upper Navbar */}
       <div className="bg-primary/40 py-2">
         <div className="container flex justify-between items-center">
           <div>
-            <a href="#" className="font-bold text-2xl sm:text-3xl flex gap-2">
-              <img src={Logo} alt="Logo" className="w-10" />
-              Shopsy
+            <a href="#home" className="font-bold text-2xl sm:text-3xl flex gap-2">
+              <img src={Logo} alt="Logo" className="w-22" />
+              
             </a>
           </div>
 
@@ -100,7 +102,8 @@ const Navbar = ({ handleOrderPopup }) => {
             <li key={data.id}>
               <a
                 href={data.link}
-                className="inline-block px-4 hover:text-primary duration-200"
+                onClick={() => smoothScroll(data.link)}
+                className="inline-block px-4 hover:text-primary duration-200 cursor-pointer"
               >
                 {data.name}
               </a>
@@ -120,6 +123,7 @@ const Navbar = ({ handleOrderPopup }) => {
                   <li key={data.id}>
                     <a
                       href={data.link}
+                      onClick={() => smoothScroll(data.link)}
                       className="inline-block w-full rounded-md p-2 hover:bg-primary/20 "
                     >
                       {data.name}

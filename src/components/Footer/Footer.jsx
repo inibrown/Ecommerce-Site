@@ -108,11 +108,11 @@ const Footer = () => {
               <div className="mt-6">
                 <div className="flex items-center gap-3">
                   <FaLocationArrow />
-                  <p>Noida, Uttar Pradesh</p>
+                  <p>Nkoyo, Ceddi plaza</p>
                 </div>
                 <div className="flex items-center gap-3 mt-3">
                   <FaMobileAlt />
-                  <p>+91 123456789</p>
+                  <p>09056100612</p>
                 </div>
               </div>
             </div>
@@ -123,4 +123,4 @@ const Footer = () => {
   );
 };
 
-export default Footer;
+export default Footer
